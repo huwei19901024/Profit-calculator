@@ -1,0 +1,35 @@
+<!--logs.wxml-->
+<view class="weui-pop__error" wx:if="{{isErrorMsg}}">{{popErrorMsg}}</view>  
+<view class="weui-container">
+  	<view class="weui-section">
+    	<view class="weui-section__title">投资金额:</view>
+    	<input type="digit" name="amount" maxlength="9" bindinput="inputAmount" placeholder="" />
+    	<view class="weui-section__unit">元</view>
+	</view>
+	<view class="weui-section">
+    	<view class="weui-section__title">年化利率:</view>
+    	<input type="digit" name="annualRate" maxlength="5" bindinput="inputAnnualRate" placeholder="" />
+    	<view class="weui-section__unit">%</view>
+	</view>
+	<view class="weui-section">
+    	<view class="weui-section__title">项目期限:</view>
+    	<input type="number" name="deadLine" maxlength="3" bindinput="inputDeadLine" placeholder="" />
+    	<radio-group class="radio-group" bindchange="radioChange">
+            <label class="radio" wx:for-items="{{items}}" wx:key="itemsId">
+                <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+            </label>
+        </radio-group>
+	</view>
+	<view class="weui-section">
+        <view class="weui-section__title">还款方式:</view>
+        <picker class="weui-section__picker" bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+            <view class="picker">
+                {{array[index]}}
+            </view>
+        </picker>
+        <view class="weui-section__more"></view>
+    </view>
+	<view class="weui-btn-submit">
+        <button formType="submit" bindtap="inputSubmit" type="primary">计算</button>
+    </view>
+</view>

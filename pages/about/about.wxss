@@ -1,0 +1,30 @@
+.mainContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.nameText{
+    font-size: 36rpx;
+    line-height: 70rpx;
+}
+.versionText{
+    font-size: 24rpx;
+    line-height: 50rpx;
+    opacity:0.6;
+}
+.titleText{
+    font-size: 36rpx;
+    line-height: 50rpx;
+    margin: 20rpx 0rpx;
+}
+.subTitleText{
+    font-size: 28rpx;
+    line-height: 40rpx;
+    margin: 20rpx;
+}
+.contentText{
+    font-size: 24rpx;
+    line-height: 20rpx;
+    margin: 3rpx;
+}

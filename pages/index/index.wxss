@@ -1,0 +1,6 @@
+/**index.wxss**/
+.index-header{
+	margin: 0;
+	width: 750rpx;
+	height: 346rpx;
+}

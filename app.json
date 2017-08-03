@@ -1,0 +1,35 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/manage/index/index",
+    "pages/manage/detail/detail",
+    "pages/about/about"
+  ],
+  "tabBar": {
+        "color": "#a4a4a4",
+        "selectedColor": "#1AAD19",
+        "backgroundColor": "#ffffff",
+        "borderStyle": "black",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "images/counter.png",
+                "selectedIconPath": "images/counter_hl.png"
+            },
+            {
+                "pagePath": "pages/about/about",
+                "text": "关于",
+                "iconPath": "images/about.png",
+                "selectedIconPath": "images/about_hl.png"
+            }
+        ]
+    },
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "收益计算器",
+    "navigationBarTextStyle":"black"
+  },
+  "debug": true
+}

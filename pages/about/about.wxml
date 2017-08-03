@@ -1,0 +1,24 @@
+<view class="flexBox">
+  <view class="card">
+    <view class="mainContent">
+      <text class="nameText">收益计算器</text>
+      <text class="versionText">软件版本 0.5</text>
+    </view>
+  </view>
+  <view class="card">
+    <view class="mainContent">
+      <text class="titleText">主创团队</text>
+      <text class="subTitleText">开发者 ：@Huwei</text>
+      <text class="subTitleText">产品经理 ：@张小璋</text>
+      <text class="subTitleText">UI 设计 ：@张小璋 </text>
+      <text class="titleText">参考文献</text>
+      <text class="subTitleText">还款方式计算</text>
+      <text class="contentText"> http://zhangsubo.cn/?p=1571</text>
+      <text class="subTitleText">License</text>
+      <text class="contentText">MIT</text>
+    </view>
+  </view>
+  <view class="weui-copyright">
+  	<text class="copyright">Powered by Zsuper</text>
+  </view>
+</view>

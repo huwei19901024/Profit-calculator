@@ -1,0 +1,29 @@
+/**app.wxss**/
+.weui-container {
+  height: 100%;
+  padding: 50rpx 30rpx;
+  box-sizing: border-box;
+} 
+.weui-copyright{
+	position: absolute;
+	bottom: 20rpx;
+	width: 100%;
+	display: flex;
+    justify-content: center;
+}
+.copyright{
+	color: #A4A4A4;
+	font-size: 24rpx;
+}
+image{
+	width:750rpx;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-radius: 10rpx;
+  border: #26AB28 1px solid;
+  padding: 20rpx;
+  margin: 10rpx 20rpx;
+}

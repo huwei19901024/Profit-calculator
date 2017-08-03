@@ -1,0 +1,13 @@
+<!--index.wxml-->
+<view class="index_image">
+  <image src="/images/index-header@1x.png" class="index-header" mode="aspectFit"></image>
+</view>
+
+<view class="weui-container">
+  <navigator url="../manage/index/index">
+    <button type="primary">收益计算器</button>
+  </navigator>
+</view>
+<view class="weui-copyright">
+  <text class="copyright">注：本计算器仅供参考，不作为实际收益依据</text>
+</view>

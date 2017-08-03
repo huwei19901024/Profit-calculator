@@ -1,0 +1,50 @@
+/**detail.wxss**/
+.weui-manage__body .weui-manage__title{
+	font-size: 38rpx;
+	color:#1AAD19;
+	margin-bottom:28rpx;
+}
+.weui-manage__body .weui-manage__title:after{
+	content:"";
+	display: block;
+	height:1px;
+	width: 150rpx;
+	background-color: #1AAD19;
+}
+.weui-result{
+	margin-bottom:40rpx;
+	font-size: 32rpx;
+}
+.weui-result .weui-result__list{
+	display: flex;
+	flex-direction: row;
+	margin-bottom:28rpx;
+}
+.weui-result .weui-result__title{
+	margin-right:26rpx;
+}
+.weui-result .weui-result__num{
+	color:#1AAD19;
+}
+.weui-result .weui-result__tips{
+	color:#ff6000;font-size: 28rpx;
+}
+.weui-plan .weui-plan__title, .weui-plan .weui-plan__list, .weui-plan .weui-plan__lower{
+	display: flex;
+	flex-direction: row;
+	border: 1px solid #ebebeb;
+	font-size: 26rpx;
+}
+.weui-plan .weui-plan__list, .weui-plan .weui-plan__lower{
+	border-top: none;
+}
+.weui-plan .weui-plan__item{
+	width: 25%;
+	height:60rpx;
+	line-height: 60rpx;
+	text-align: center;
+	border-right: 1px solid #ebebeb;
+}
+.weui-plan .weui-plan__item:nth-of-type(4){
+	border-right: none;
+}

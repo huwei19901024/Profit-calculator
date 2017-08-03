@@ -1,0 +1,45 @@
+<!--detail.wxml-->
+<view class="weui-container">
+	<view class="weui-manage__body">
+		<view class="weui-manage__title">计算结果</view>
+		<view class="weui-result">
+			<view class="weui-result__list">
+	    		<view class="weui-result__title">总收益:</view>
+	    		<view class="weui-result__num">{{summoney}}</view>
+	    		<view class="weui-result__unit">元</view>
+	    	</view>
+	    	<view class="weui-result__list">
+	    		<view class="weui-result__title">{{resultTitle}}:</view>
+	    		<view class="weui-result__num">{{resultNum}}</view>
+	    		<view class="weui-result__unit">元</view>	
+	    	</view>
+	    	<view class="weui-result__list">
+				<view class="weui-result__depict">{{resultDepict}}</view>
+	    	</view>
+	    	<view class="weui-result__list">
+				<view class="weui-result__tips">备注:收益计算数据仅供参考，实际情况以平台为准</view>
+	    	</view>
+		</view>
+		<view class="weui-manage__title">回款计划</view>
+		<view class="weui-plan">
+			<view class="weui-plan__title">
+				<view class="weui-plan__item">期数</view>
+				<view class="weui-plan__item">应收本金</view>
+				<view class="weui-plan__item">应收利息</view>
+				<view class="weui-plan__item">应收总额</view>
+			</view>
+			<view class="weui-plan__list" wx:for="{{results}}" wx:key="resultsId">
+				<view class="weui-plan__item">{{item.id}}</view>
+				<view class="weui-plan__item">{{item.capital}}</view>
+				<view class="weui-plan__item">{{item.interest}}</view>
+				<view class="weui-plan__item">{{item.repayment}}</view>
+			</view>
+			<view class="weui-plan__lower">
+				<view class="weui-plan__item">总计</view>
+				<view class="weui-plan__item">{{capitalTotal}}</view>
+				<view class="weui-plan__item">{{interestTotal}}</view>
+				<view class="weui-plan__item">{{repaymentTotal}}</view>
+			</view>
+		</view>
+	</view>
+</view>
