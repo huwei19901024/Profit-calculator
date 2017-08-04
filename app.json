@@ -1,35 +1,41 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/about/about",
     "pages/manage/index/index",
-    "pages/manage/detail/detail",
-    "pages/about/about"
+    "pages/manage/detail/detail"
   ],
-  "tabBar": {
-        "color": "#a4a4a4",
-        "selectedColor": "#1AAD19",
-        "backgroundColor": "#ffffff",
-        "borderStyle": "black",
-        "list": [
-            {
-                "pagePath": "pages/index/index",
-                "text": "首页",
-                "iconPath": "images/counter.png",
-                "selectedIconPath": "images/counter_hl.png"
-            },
-            {
-                "pagePath": "pages/about/about",
-                "text": "关于",
-                "iconPath": "images/about.png",
-                "selectedIconPath": "images/about_hl.png"
-            }
-        ]
-    },
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#ffffff",
-    "navigationBarTitleText": "收益计算器",
-    "navigationBarTextStyle":"black"
+    "navigationBarBackgroundColor": "#1AAD19",
+    "navigationBarTitleText": "理财计算器",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "color": "#a4a4a4",
+    "selectedColor": "#1AAD19",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+        {
+            "pagePath": "pages/index/index",
+            "text": "首页",
+            "iconPath": "images/counter.png",
+            "selectedIconPath": "images/counter_hl.png"
+        },
+        {
+            "pagePath": "pages/about/about",
+            "text": "关于",
+            "iconPath": "images/about.png",
+            "selectedIconPath": "images/about_hl.png"
+        }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
   },
   "debug": true
 }

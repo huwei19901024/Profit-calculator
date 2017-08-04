@@ -1,17 +1,31 @@
-.mainContent{
+.about-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-radius: 10rpx;
+  border: #26AB28 1px solid;
+  padding: 20rpx;
+  margin-bottom: 30rpx;
+}
+.about-box_content{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.nameText{
+.about-box_title{
     font-size: 36rpx;
     line-height: 70rpx;
 }
-.versionText{
+.about-box_text{
     font-size: 24rpx;
     line-height: 50rpx;
     opacity:0.6;
+}
+.about-box_subtext{
+  font-size: 28rpx;
+  line-height: 40rpx;
+  margin: 20rpx;
 }
 .titleText{
     font-size: 36rpx;

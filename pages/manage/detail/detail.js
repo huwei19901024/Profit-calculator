@@ -35,7 +35,7 @@ Page({
           capital = parseFloat(this.data.amount).toFixed(2);
           interest = (interestTotal - interest*(i-1)).toFixed(2);
         }
-        var repayment =  Math.round((Number(capital) + Number(interest)).toFixed(2)*100)/100.0;
+        var repayment =  Math.round((parseFloat(capital) + parseFloat(interest)).toFixed(2)*100)/100.0;
         repayArray.push(
           {id: i, capital: capital, interest: interest, repayment: repayment},
         )
@@ -58,12 +58,13 @@ Page({
         if (i == 1) {
           var interest = Math.round(this.data.amount * (this.data.annualRate/12/100)*100)/100.0;
         } else {
-          var interest = Math.round(((this.data.amount * (this.data.annualRate/12/100)-Number(repayment)) * Math.pow((1 + (this.data.annualRate/12/100)), (i-1))+Number(repayment))*100)/100.0;
+          var interest = Math.round(((this.data.amount * (this.data.annualRate/12/100)-parseFloat(repayment)) * Math.pow((1 + (this.data.annualRate/12/100)), (i-1))+parseFloat(repayment))*100)/100.0;
         }
-        var capital = (Number(repayment) - Number(interest)).toFixed(2);
+
+        var capital = (parseFloat(repayment) - parseFloat(interest)).toFixed(2);
         if (i == this.data.deadLine) {
           var capital = (this.data.amount - capital_ready).toFixed(2);
-          var repayment = Math.round((Number(capital) + Number(interest)).toFixed(2)*100)/100.0;
+          var repayment = Math.round((parseFloat(capital) + parseFloat(interest)).toFixed(2)*100)/100.0;
           repayArray.push(
             {id: i, capital: capital, interest: interest, repayment: repayment},
           )
@@ -87,7 +88,7 @@ Page({
     } else if(this.data.type == "mouth" && this.data.index == 2) {
       var capital = parseFloat(this.data.amount).toFixed(2);
       var interest = (this.data.amount * this.data.annualRate * this.data.deadLine/1200).toFixed(2);
-      var repayment = (Number(capital) + Number(interest)).toFixed(2);
+      var repayment = (parseFloat(capital) + parseFloat(interest)).toFixed(2);
       this.setData({
         summoney: (this.data.amount * this.data.annualRate * this.data.deadLine/1200).toFixed(2),
         results: [{id: 1, capital: capital, interest: interest, repayment: repayment}],
@@ -98,10 +99,41 @@ Page({
         interestTotal: interest,
         repaymentTotal: (parseFloat(this.data.amount) + parseFloat(interest)).toFixed(2)
       })
+    } else if(this.data.type == "mouth" && this.data.index == 3) {
+      var capital =(this.data.amount/this.data.deadLine).toFixed(2)
+      var interestTotal = 0;
+      var repaymented_account = 0;
+      for (var i = 1; i <= this.data.deadLine; i++) {
+        var interest = ((this.data.amount - repaymented_account)* this.data.deadLine/1200).toFixed(2);
+        if (i == this.data.deadLine) {
+          capital = parseFloat(this.data.amount - repaymented_account).toFixed(2);
+          repayment = (parseFloat(capital) + parseFloat(interest)).toFixed(2);
+          repayArray.push(
+            {id: i, capital: capital, interest: interest, repayment: repayment},
+          )
+        } else {
+          repayment = (parseFloat(capital) + parseFloat(interest)).toFixed(2);
+          repayArray.push(
+            {id: i, capital: capital, interest: interest, repayment: repayment},
+          )
+        }
+        repaymented_account += parseFloat(capital);
+        interestTotal += parseFloat(interest);
+      }
+      this.setData({
+        summoney: interestTotal.toFixed(2),
+        results: repayArray,
+        resultTitle: '最后应收',
+        resultNum: (parseFloat(this.data.amount) + parseFloat(interestTotal)).toFixed(2),
+        resultDepict: '每个月收到的本金相同,利息越来越少',
+        capitalTotal: parseFloat(this.data.amount).toFixed(2),
+        interestTotal: interestTotal.toFixed(2),
+        repaymentTotal: (parseFloat(this.data.amount) + parseFloat(interestTotal)).toFixed(2)
+      })
     } else {
       var capital = parseFloat(this.data.amount).toFixed(2);
       var interest = (this.data.amount * this.data.annualRate * this.data.deadLine/36500).toFixed(2);
-      var repayment = (Number(capital) + Number(interest)).toFixed(2);
+      var repayment = (parseFloat(capital) + parseFloat(interest)).toFixed(2);
       this.setData({
         summoney: (this.data.amount * this.data.annualRate * this.data.deadLine/36500).toFixed(2),
         results: [{id: 1, capital: capital, interest: interest, repayment: repayment}],

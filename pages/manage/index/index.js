@@ -2,7 +2,7 @@
 Page({
   data: {
     isErrorMsg: false,
-    array: ["先息后本","等额本息","到期一次性还本付息"],
+    array: ["先息后本","等额本息","到期一次性还本付息","等额本金"],
     items: [
       {name: 'day', value: '天'},
       {name: 'mouth', value: '月', checked: 'true'},
@@ -47,21 +47,10 @@ Page({
       });
     } else {
       this.setData({
-        array:["先息后本","等额本息","到期一次性还本付息"],
+        array:["先息后本","等额本息","到期一次性还本付息","等额本金"],
         index:0
       });
     }
-  },
-  inputReset: function(e) {
-    console.log(e)
-    this.setData({
-      array:["先息后本","等额本息","到期一次性还本付息"],
-      index:0,
-      amount:'333',
-      annualRate:'',
-      deadLine:'',
-      type:'mouth'
-    })
   },
   inputSubmit: function(e) {
     if (this.data.amount == "" || this.data.amount == undefined) {
@@ -83,11 +72,6 @@ Page({
         popErrorMsg: '项目期限不能为空',
         isErrorMsg: true, 
       });
-      // window.timmer = setTimeout( function(){
-      //   this.setData({ 
-      //     isErrorMsg: false, 
-      //   });
-      // }.bind(this),2000);
       return false;   
     }
     wx.navigateTo({

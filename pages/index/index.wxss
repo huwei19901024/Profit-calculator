@@ -1,6 +1,6 @@
 /**index.wxss**/
-.index-header{
-	margin: 0;
+.weui-index__image image{
 	width: 750rpx;
 	height: 346rpx;
 }
+
