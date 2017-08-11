@@ -104,7 +104,7 @@ Page({
       var interestTotal = 0;
       var repaymented_account = 0;
       for (var i = 1; i <= this.data.deadLine; i++) {
-        var interest = ((this.data.amount - repaymented_account)* this.data.deadLine/1200).toFixed(2);
+        var interest = ((this.data.amount - repaymented_account)* this.data.annualRate/1200).toFixed(2);
         if (i == this.data.deadLine) {
           capital = parseFloat(this.data.amount - repaymented_account).toFixed(2);
           repayment = (parseFloat(capital) + parseFloat(interest)).toFixed(2);
